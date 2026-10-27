@@ -1,0 +1,39 @@
+{
+  "name": "quiz-builder",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Quiz Builder: NestJS + Prisma backend, Next.js frontend",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "predev": "pnpm --filter @quiz/shared build",
+    "dev": "concurrently -n shared,api,web -c blue,green,magenta \"pnpm --filter @quiz/shared dev\" \"pnpm --filter backend start:dev\" \"pnpm --filter frontend dev\"",
+    "build": "pnpm --filter @quiz/shared build && pnpm --filter backend build && pnpm --filter frontend build",
+    "db:up": "docker compose up -d --wait",
+    "db:down": "docker compose down",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "db:migrate": "pnpm --filter backend prisma:deploy && pnpm --filter backend prisma:generate",
+    "db:seed": "pnpm --filter @quiz/shared build && pnpm --filter backend prisma:seed"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.22.0",
+      "onFail": "download"
+    }
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "concurrently": "^10.0.6",
+    "eslint": "^10.13.0",
+    "eslint-config-next": "16.4.3",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.13.0",
+    "prettier": "^3.9.10",
+    "typescript": "catalog:",
+    "typescript-eslint": "^8.72.0"
+  }
+}
