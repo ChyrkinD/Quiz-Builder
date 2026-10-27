@@ -1,0 +1,27 @@
+{
+  "name": "@quiz/shared",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Zod schemas and API types shared by backend and frontend",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json && tsc-alias -p tsconfig.json",
+    "dev": "concurrently --raw \"tsc -p tsconfig.json --watch --preserveWatchOutput\" \"tsc-alias -p tsconfig.json --watch\"",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "tsc-alias": "^1.9.9"
+  }
+}
