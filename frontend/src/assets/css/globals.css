@@ -1,0 +1,48 @@
+@import 'tailwindcss';
+
+@theme inline {
+  --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+}
+
+@theme {
+  --color-bg: #fff8f1;
+  --color-surface: #ffffff;
+  --color-border: #ece4f6;
+  --color-border-strong: #d6c9ea;
+  --color-text: #2a1f45;
+  --color-text-muted: #6b6185;
+  --color-text-inverse: #ffffff;
+
+  --color-primary: #7c3aed;
+  --color-primary-strong: #5b21b6;
+  --color-primary-soft: #f1eafe;
+
+  --color-boolean: #2563eb;
+  --color-boolean-strong: #1e40af;
+  --color-boolean-soft: #e3edff;
+  --color-input: #ea580c;
+  --color-input-strong: #9a3412;
+  --color-input-soft: #ffedd5;
+  --color-checkbox: #16a34a;
+  --color-checkbox-strong: #166534;
+  --color-checkbox-soft: #dcfce7;
+
+  --color-danger: #dc2626;
+  --color-danger-strong: #991b1b;
+  --color-danger-soft: #fee2e2;
+  --color-success: #16a34a;
+  --color-success-soft: #dcfce7;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  --shadow-card: 0 4px 0 var(--color-border);
+  --shadow-raised: 0 12px 32px rgb(42 31 69 / 0.12);
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
